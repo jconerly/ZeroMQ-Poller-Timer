@@ -9,6 +9,7 @@ use threads;
 use ZeroMQ qw/ ZMQ_POLLIN ZMQ_PAIR /;
 
 my $zmq_ctxt = ZeroMQ::Context->new();
+my $testmode = 0;
 
 # Nope, not using Moose or even Class::Accessor 'antlers'
 # for this first pass. It's a lite weight little module
@@ -17,6 +18,7 @@ my $zmq_ctxt = ZeroMQ::Context->new();
 sub new {
     my $class = shift;
     my $self  = {@_};
+    $testmode ||= $self->{'test'};
 
     if ( !$self->{'name'} ) {
         _pe("constuctor requires a 'name' field.");
@@ -93,7 +95,10 @@ sub _timer {
 }
 
 # '_pe' is short for 'print error'. te he.
-sub _pe { print STDERR __PACKAGE__ . ': ' . (shift) . "\n" }
+sub _pe {
+    return if $testmode;
+    print STDERR __PACKAGE__ . ': ' . (shift) . "\n";
+}
 
 1;
 
