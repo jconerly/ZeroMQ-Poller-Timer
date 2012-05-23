@@ -258,7 +258,7 @@ and
 
 =head1 NOTES
 
-This module uses perl threads. If you're using ZeroMQ to begin with then
+This module uses perl L<threads>. If you're using ZeroMQ to begin with then
 threads shouldn't be a concern for you.
 
 Also, it does not have any external module dependencies other than ZeroMQ
