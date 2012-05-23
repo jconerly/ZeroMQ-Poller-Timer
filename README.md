@@ -97,7 +97,7 @@ loop:
         # ...
     }
 
-or when manually declare the poll item hash in the ZeroMQ::Poller
+or when you manually declare the poll item hash in the ZeroMQ::Poller
 constructor (see `sock()` below).
 
 ## sock()
@@ -153,8 +153,8 @@ and
 
 # NOTES
 
-This module uses perl [threads](http://search.cpan.org/perldoc?threads). If
-you're using ZeroMQ to begin with then threads shouldn't be a concern for you.
+This module uses perl [threads](http://search.cpan.org/perldoc?threads). If you're using ZeroMQ to begin with then
+threads shouldn't be a concern for you.
 
 Also, it does not have any external module dependencies other than ZeroMQ
 as I would like to keep it as lite and as simple as possible. 

@@ -207,7 +207,7 @@ loop:
       # ...
   }
 
-or when manually declare the poll item hash in the ZeroMQ::Poller
+or when you manually declare the poll item hash in the ZeroMQ::Poller
 constructor (see C<sock()> below).
 
 =head2 sock()
