@@ -168,7 +168,9 @@ using it for here. ZMQ\_PAIR sockets are meant to be used in a controlled,
 stable environment (i.e. not interprocess) and do not auto-reconnect.
 
 If you are having any issues using ZeroMQ::Poller::Timer in your application
-please file a bug report.
+please file a bug report on github at:
+
+[https://github.com/jconerly/ZeroMQ-Poller-Timer](https://github.com/jconerly/ZeroMQ-Poller-Timer)
 
 # SEE ALSO
 
@@ -178,10 +180,7 @@ ZeroMQ
 
 James Conerly <james at jamesconerly.com>
 
-# LICENSE AND COPYRIGHT
-
-Copyright 2012 James Conerly `<james at jamesconerly.com>`.
-All rights reserved.
+# LICENSE
 
 This module is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. See [perlartistic](http://search.cpan.org/perldoc?perlartistic).
