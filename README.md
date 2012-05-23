@@ -174,7 +174,7 @@ please file a bug report on github at:
 
 # SEE ALSO
 
-ZeroMQ
+[ZeroMQ](http://search.cpan.org/perldoc?ZeroMQ)
 
 # AUTHOR
 

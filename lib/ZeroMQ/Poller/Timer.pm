@@ -283,7 +283,7 @@ L<https://github.com/jconerly/ZeroMQ-Poller-Timer>
 
 =head1 SEE ALSO
 
-[ZeroMQ](http://search.cpan.org/perldoc?ZeroMQ)
+L<ZeroMQ>
 
 =head1 AUTHOR
 
