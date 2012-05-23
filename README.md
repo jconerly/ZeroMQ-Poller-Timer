@@ -87,7 +87,7 @@ you land in your poll loop. Otherwise this was all for not.
 
 # METHODS
 
-- name()
+## name()
 
 Return the name of the timer you passed into the constructor. You'll use
 this when calling the `$poller->has_event()` method inside your polling
@@ -100,7 +100,7 @@ loop:
 or when manually declare the poll item hash in the ZeroMQ::Poller
 constructor (see `sock()` below).
 
-- sock()
+## sock()
 
 Return the ZeroMQ socket for the timer. This can be used if you manually
 declare the poll item hash in the ZeroMQ::Poller constructor. (i.e. you
@@ -114,14 +114,14 @@ decide not to use the `poll_hash()` method):
         },
     );
 
-- start()
+## start()
 
 If you had passed a true value into the constructor for the 'pause' field
 then you need to call `start()` to start your timer. The timer thread will
 not be created until this is called, so make sure you do it before you enter
 your infinite poll loop.
 
-- reset()
+## reset()
 
 When your timer fires off and you enter the `if ($poller->has_event(...))`
 block inside your infinite loop you need to reset the timer. This is really
@@ -132,7 +132,7 @@ just a convience method and is the same as doing the following:
 When you fall into a `has_event()` block you'd need to make a call to a
 `revc()` anyways, so this doesn't add any overhead... just syntatic sugar.
 
-- poll\_hash()
+## poll\_hash()
 
 This is another convience method for you and is best explained by example.
 The following two instantiations are identical:

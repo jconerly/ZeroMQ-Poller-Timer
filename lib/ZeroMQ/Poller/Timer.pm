@@ -192,9 +192,7 @@ you land in your poll loop. Otherwise this was all for not.
 
 =head1 METHODS
 
-=over 4
-
-=item name()
+=head2 name()
 
 Return the name of the timer you passed into the constructor. You'll use
 this when calling the C<< $poller->has_event() >> method inside your polling
@@ -207,7 +205,7 @@ loop:
 or when manually declare the poll item hash in the ZeroMQ::Poller
 constructor (see C<sock()> below).
 
-=item sock()
+=head2 sock()
 
 Return the ZeroMQ socket for the timer. This can be used if you manually
 declare the poll item hash in the ZeroMQ::Poller constructor. (i.e. you
@@ -217,18 +215,18 @@ decide not to use the C<poll_hash()> method):
       {
           name   => $timer->name,
           sock   => $timer->sock,
-          events => ZMQ_POLLIN,
+          events => ZMQ_POLLIN,        
       },
   );
 
-=item start()
+=head2 start()
 
 If you had passed a true value into the constructor for the 'pause' field
 then you need to call C<start()> to start your timer. The timer thread will
 not be created until this is called, so make sure you do it before you enter
 your infinite poll loop.
 
-=item reset()
+=head2 reset()
 
 When your timer fires off and you enter the C<< if ($poller->has_event(...)) >>
 block inside your infinite loop you need to reset the timer. This is really
@@ -239,7 +237,7 @@ just a convience method and is the same as doing the following:
 When you fall into a C<has_event()> block you'd need to make a call to a
 C<revc()> anyways, so this doesn't add any overhead... just syntatic sugar.
 
-=item poll_hash()
+=head2 poll_hash()
 
 This is another convience method for you and is best explained by example.
 The following two instantiations are identical:
@@ -257,8 +255,6 @@ and
           events => ZMQ_POLLIN,
       },
   );
-
-=back
 
 =head1 NOTES
 
