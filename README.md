@@ -15,17 +15,22 @@ ZeroMQ::Poller::Timer - Simple timer for use with ZeroMQ::Poller
 
 # DESCRIPTION
 
-Within a ZeroMQ::Poller infinite loop there does not seem to be a way
-to use something like AnyEvent to trigger a timer so that, regardless
-of what's happening on the sockets you're polling, you can periodically
-do stuff.
+ZeroMQ::Poller waits on ZeroMQ sockets for events, and if you're writing
+a daemon you would usually have it do this in an infinite loop. However,
+if nothing is happening on those sockets then ZeroMQ::Poller just blocks
+on it's `poll()` method indefinitely. Daemons might periodically want to
+do things, like reload configuration files, talk to databases, or process
+jobs that didn't succeed the first time.
+
+Currently, ZeroMQ::Poller has no built in functionality to let you
+periodically break out of the the `poll()` and do work. So this is my
+attempt at adding a periodic timer within the boundry of ZeroMQ::Poller.
 
 ZeroMQ::Poller::Timer is a simple, AnyEvent-like timer for use with
-ZeroMQ::Poller. Like an AnyEvent timer you can set the timer to fire
+ZeroMQ::Poller. Like an AnyEvent timer you can set each timer to fire
 off once, or at intervals. It currently does not support a callback
 feature, and might never. The timer is simply a way to make it possible
-to periodically break out of your `$poller->poll()` block so you
-can do stuff.
+to periodically break out the blocking `poll` so you can do stuff.
 
 # FULL EXAMPLE
 
@@ -156,13 +161,13 @@ and
 This module uses perl [threads](http://search.cpan.org/perldoc?threads). If you're using ZeroMQ to begin with then
 threads shouldn't be a concern for you.
 
-Also, it does not have any external module dependencies other than ZeroMQ
+Also, it does not have any external module dependencies, other than ZeroMQ,
 as I would like to keep it as lite and as simple as possible. 
 
 # CAVEATS
 
 ZeroMQ::Poller::Timer uses the ZMQ\_PAIR pattern, which for a long while
-was considered experimantal, though it seems to be stable now. It's main
+was considered experimental, though it seems to be stable now. It's main
 use is for efficient multithreading communication, which is what we're
 using it for here. ZMQ\_PAIR sockets are meant to be used in a controlled,
 stable environment (i.e. not interprocess) and do not auto-reconnect.
