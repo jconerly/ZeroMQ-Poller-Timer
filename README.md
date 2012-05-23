@@ -24,7 +24,8 @@ jobs that didn't succeed the first time.
 
 Currently, ZeroMQ::Poller has no built in functionality to let you
 periodically break out of the the `poll()` and do work. So this is my
-attempt at adding a periodic timer within the boundry of ZeroMQ::Poller.
+attempt at adding periodic timer functionality to ZeroMQ::Poller, using
+ZeroMQ.
 
 ZeroMQ::Poller::Timer is a simple, AnyEvent-like timer for use with
 ZeroMQ::Poller. Like an AnyEvent timer you can set each timer to fire
