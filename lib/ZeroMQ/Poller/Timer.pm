@@ -137,7 +137,8 @@ ZeroMQ::Poller::Timer is a simple, AnyEvent-like timer for use with
 ZeroMQ::Poller. Like an AnyEvent timer you can set each timer to fire
 off once, or at intervals. It currently does not support a callback
 feature, and might never. The timer is simply a way to make it possible
-to periodically break out the blocking C<poll> so you can do stuff.
+to periodically break out of the blocking call to C<poll> so you can
+do other daemony stuff.
 
 =head1 FULL EXAMPLE
 
