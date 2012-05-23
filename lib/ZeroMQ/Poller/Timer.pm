@@ -164,13 +164,13 @@ can do stuff.
 
 =over 4
 
-=item * I<name> B<REQUIRED>
+=item * I<name>     (B<required>)
 
 This is the unique name for this timer. It will be used in your poll loop
 to identify which event block to execute. (See FULL EXAMPLE above and
 METHODS below).
 
-=item * I<after> B<REQUIRED>
+=item * I<after>    (B<required>)
 
 Number of seconds after which to execute the timer. If you want to start
 running the timer immediately set this value to 0 (zero).
@@ -217,7 +217,7 @@ decide not to use the C<poll_hash()> method):
       {
           name   => $timer->name,
           sock   => $timer->sock,
-          events => ZMQ_POLLIN,        
+          events => ZMQ_POLLIN,
       },
   );
 
@@ -287,7 +287,7 @@ ZeroMQ
 
 =head1 AUTHOR
 
-James Conerly <james at jamesconerly.com>
+James Conerly C<< <james at jamesconerly.com> >>
 
 =head1 LICENSE
 

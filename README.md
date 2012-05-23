@@ -61,13 +61,13 @@ can do stuff.
 
 # CONSTRUCTOR ARGUMENTS
 
-- _name_ __REQUIRED__
+- _name_     (__required__)
 
 This is the unique name for this timer. It will be used in your poll loop
 to identify which event block to execute. (See FULL EXAMPLE above and
 METHODS below).
 
-- _after_ __REQUIRED__
+- _after_    (__required__)
 
 Number of seconds after which to execute the timer. If you want to start
 running the timer immediately set this value to 0 (zero).
@@ -178,7 +178,7 @@ ZeroMQ
 
 # AUTHOR
 
-James Conerly <james at jamesconerly.com>
+James Conerly `<james at jamesconerly.com>`
 
 # LICENSE
 
