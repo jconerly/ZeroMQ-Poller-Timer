@@ -46,7 +46,7 @@ sub new {
 
     $obj->start unless $self->{'pause'};
 
-    return $self;
+    return $obj;
 }
 
 sub start {
