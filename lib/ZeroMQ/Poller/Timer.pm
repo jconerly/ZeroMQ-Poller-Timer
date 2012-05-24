@@ -82,15 +82,16 @@ sub _timer {
 
     $sock->connect( $self->{'_addr'} );
 
-    if ($int) {
-        while (1) {
-            sleep $int;
-            $sock->send(1);
-        }
-    }
-    else {
-        sleep $after;
+    sleep $after;
+
+    if ( !$int ) {
         $sock->send(1);
+        return;
+    }
+
+    while (1) {
+        $sock->send(1);
+        sleep $int;
     }
 }
 
