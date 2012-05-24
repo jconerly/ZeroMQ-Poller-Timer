@@ -27,7 +27,7 @@ periodically break out of the the `poll()` and do work. So this is my
 attempt at adding periodic timer functionality to ZeroMQ::Poller, using
 ZeroMQ.
 
-ZeroMQ::Poller::Timer is a simple, AnyEvent-like timer for use with
+__ZeroMQ::Poller::Timer__ is a simple, AnyEvent-like timer for use with
 ZeroMQ::Poller. Like an AnyEvent timer you can set each timer to fire
 off once, or at intervals. It currently does not support a callback
 feature, and might never. The timer is simply a way to make it possible
@@ -181,7 +181,9 @@ please file a bug report on github at:
 
 # SEE ALSO
 
-[ZeroMQ](http://search.cpan.org/perldoc?ZeroMQ)
+[ZeroMQ](http://search.cpan.org/perldoc?ZeroMQ), [ZeroMQ::Poller](http://search.cpan.org/perldoc?ZeroMQ::Poller), [AnyEvent](http://search.cpan.org/perldoc?AnyEvent)
+
+[ZeroMQ::Poller::Timer](http://search.cpan.org/perldoc?ZeroMQ::Poller::Timer)
 
 # AUTHOR
 

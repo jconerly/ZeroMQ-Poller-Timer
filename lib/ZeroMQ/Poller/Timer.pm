@@ -133,7 +133,7 @@ periodically break out of the the C<poll()> and do work. So this is my
 attempt at adding periodic timer functionality to ZeroMQ::Poller, using
 ZeroMQ.
 
-ZeroMQ::Poller::Timer is a simple, AnyEvent-like timer for use with
+B<ZeroMQ::Poller::Timer> is a simple, AnyEvent-like timer for use with
 ZeroMQ::Poller. Like an AnyEvent timer you can set each timer to fire
 off once, or at intervals. It currently does not support a callback
 feature, and might never. The timer is simply a way to make it possible
@@ -291,7 +291,9 @@ L<https://github.com/jconerly/ZeroMQ-Poller-Timer>
 
 =head1 SEE ALSO
 
-L<ZeroMQ>
+L<ZeroMQ>, L<ZeroMQ::Poller>, L<AnyEvent>
+
+L<ZeroMQ::Poller::Timer>
 
 =head1 AUTHOR
 
